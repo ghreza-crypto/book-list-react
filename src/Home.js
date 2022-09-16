@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BookList from "./BookList";
 
 const Home = () => {
     const [books, setBooks] = useState([
@@ -8,12 +9,7 @@ const Home = () => {
     ]);
     return (
         <div className="home">
-            {books.map((book) => (
-                <div className="book-preview" key={book.id}>
-                    <h2>{book.title}</h2>
-                    <p>author: {book.author}</p>
-                </div>
-            ))}
+            <BookList books={books} title="All Books!" />
         </div>
     );
 }
