@@ -6,7 +6,7 @@ const BookList = ({ books, title, handleDelete }) => {
                 <div className="book-preview" key={book.id}>
                     <h2>{book.title}</h2>
                     <p>author: {book.author}</p>
-                    <button onClick={() => handleDelete(book.id)}>delete book</button>
+                    {/* <button onClick={() => handleDelete(book.id)}>delete book</button> */}
                 </div>
             ))}
         </div>
