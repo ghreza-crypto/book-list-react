@@ -1,30 +1,12 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import BookList from "./BookList";
+import useFetch from "./useFetch";
 
 const Home = () => {
-    const [books, setBooks] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    // const handleDelete = (id) => {
-    //     const newBooks = books.filter(book => book.id !== id);
-    //     setBooks(newBooks);
-    // }
-
-    useEffect(() => {
-        setTimeout(() => {
-            fetch('http://localhost:4000/books')
-                .then(res => {
-                    return res.json();
-                })
-                .then(data => {
-                    setBooks(data);
-                    setIsPending(false);
-                });
-        }, 1000);
-    }, []);
+    const { data: books, isPending, error } = useFetch('http://localhost:4000/books');
 
     return (
         <div className="home">
+            {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {books && <BookList books={books} title="All Books!" />}
             {books && <BookList books={books.filter((book) => book.author === 'ahmad')} title="Ahmad's Books!" />}
