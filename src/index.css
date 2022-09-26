@@ -44,3 +44,6 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+.book-preview a{
+  text-decoration: none;
+}
