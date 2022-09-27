@@ -103,3 +103,11 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.book-details button{
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
